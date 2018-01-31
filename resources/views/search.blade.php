@@ -32,6 +32,7 @@
   <script>
 $( function() {
   $('#results').hide();
+  $('#SearchItem').addClass('loadinggif');
   $( "#SearchItem" ).autocomplete({
     source: "{{ route('search') }}"
 });
@@ -47,6 +48,7 @@ $( function() {
         data: {'SearchItem':$value},
         success:function(data){
           $('#results').html(data);
+          $("#SearchItem").removeClass("loadinggif");
         }
     });
   })
