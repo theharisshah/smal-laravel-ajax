@@ -40,7 +40,7 @@ $( function() {
     source: "{{ route('search') }}"
 });
 
-  $("#SearchItem").keypress(function(e) {
+  $("#SearchItem").on('change', function(e) {
       $('#results').addClass('loadinggif');
       $('#SearchItem').addClass('loadinggif');
       
