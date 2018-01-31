@@ -41,7 +41,7 @@ $( function() {
 });
 
   $("#SearchItem").keypress(function(e) {
-   
+      $('#results').addClass('loadinggif');
       $('#SearchItem').addClass('loadinggif');
       
       $('#results').show();
@@ -53,6 +53,7 @@ $( function() {
         success:function(data){
           $('#results').html(data);
           $("#SearchItem").removeClass("loadinggif");
+          $(".loading").removeClass("loadinggif");
         }
     });
   })
