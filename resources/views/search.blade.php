@@ -32,8 +32,8 @@
     <script src="js/main.js"></script>
   <script>
 $( function() {
-  $('#results').hide();
   $('#SearchItem').addClass('loadinggif');
+  $('#results').hide();
   $( "#SearchItem" ).autocomplete({
     source: "{{ route('search') }}"
 });
