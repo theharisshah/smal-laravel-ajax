@@ -34,7 +34,7 @@
     <script src="js/main.js"></script>
   <script type='text/javascript'>
 $( function() {
-  $('#SearchItem').addClass('loadinggif');
+  
   $('#results').hide();
   $( "#SearchItem" ).autocomplete({
     source: "{{ route('search') }}"
@@ -42,7 +42,7 @@ $( function() {
 
   $("#SearchItem").keypress(function(e) {
    
-    
+      $('#SearchItem').addClass('loadinggif');
       $('#results').show();
       $value=$('#SearchItem').val();
       $.ajax({
