@@ -35,7 +35,7 @@ $( function() {
   $("#SearchItem").keypress(function(e) {
    
     if(e.keyCode == 13){
-      $('#results').load();
+      $('#results').show();
       $value=$('#SearchItem').val();
       $.ajax({
         type : 'get',
