@@ -10,7 +10,7 @@ class SearchController extends Controller
 {
     public function result(Request $request){
         $term = $request->term;
-        $items = Search::where('PhoneName', 'LIKE', $term.'%')->get();
+        $items = Search::where('PhoneName', 'LIKE', '%'.$term.'%')->get();
         if(count($items) == 0){
             $searchResult[]="Item not Found!";
             return $searchResult;
