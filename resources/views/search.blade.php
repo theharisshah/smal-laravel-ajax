@@ -40,8 +40,7 @@ $( function() {
       $.ajax({
         type : 'get',
         url :"{{ route('phone') }}",
-        data: {"_token": "{{ csrf_token() }}",
-        'SearchItem':$value},
+        data: {'SearchItem':$value},
         success:function(data){
           $('#results').html(data);
         }
