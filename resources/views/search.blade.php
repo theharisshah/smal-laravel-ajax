@@ -6,9 +6,9 @@
    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
-   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    
+   <link rel="stylesheet" href="css/style.css">
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
   </head>
   <body>
