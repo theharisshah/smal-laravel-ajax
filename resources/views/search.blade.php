@@ -43,7 +43,7 @@ $( function() {
   $("#SearchItem").keypress(function(e) {
    
       $('#SearchItem').addClass('loadinggif');
-      $('.container').addClass('loadinggif');
+      
       $('#results').show();
       $value=$('#SearchItem').val();
       $.ajax({
