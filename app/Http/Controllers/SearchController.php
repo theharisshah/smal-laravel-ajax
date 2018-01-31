@@ -27,9 +27,7 @@ class SearchController extends Controller
             $term = $request->input('SearchItem');
             
           $items = Search::where('PhoneName', 'LIKE', $term.'%')->first();
-            // $items = DB::select("select * from Search where PhoneName ='.$term.'");
-            if(count($items) > 0){
-                // foreach($items as $key=>$value){
+
                     $results.='
                     <div class="card-header">
                         <ul class="nav nav-pills" role="tablist">
@@ -66,9 +64,7 @@ class SearchController extends Controller
                             </ul>
                         </div>
                      </div>';
-                 }else{
-                     $results = "<input type=hidden>";
-                 }
+              
         
             return response($results);
         }
