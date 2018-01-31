@@ -28,18 +28,14 @@
     <script src="js/main.js"></script>
   <script>
 $( function() {
-  // $('#results').hide();
+  $('#results').hide();
   $( "#SearchItem" ).autocomplete({
     source: "{{ route('search') }}"
-});
-$("a:contains('Specifications')").click(function(event){
-    event.preventDefault();//to stop refresh/redirecting
-    $("#results").load("specifications.blade.php");
 });
   $("#SearchItem").keypress(function(e) {
    
     if(e.keyCode == 13){
-      $('#results').show();
+      $('#results').load();
       $value=$('#SearchItem').val();
       $.ajax({
         type : 'get',
