@@ -38,7 +38,7 @@ $( function() {
 
   $("#SearchItem").keypress(function(e) {
    
-    if(e.keyCode == 13){
+    
       $('#results').show();
       $value=$('#SearchItem').val();
       $.ajax({
@@ -48,7 +48,7 @@ $( function() {
         success:function(data){
           $('#results').html(data);
         }
-    });}
+    });
   })
 });
   </script>
