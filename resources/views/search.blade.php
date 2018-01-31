@@ -36,7 +36,7 @@
 $( function() {
   $('#SearchItem').addClass('loadinggif');
   $('#results').hide();
-  $( "#SearchItem" ).autocomplete({
+  $( "#SearchItem" ).devbridgeAutocomplete({
     source: "{{ route('search') }}"
 });
 
