@@ -8,4 +8,4 @@ Route::get('/search', [
     "uses"=> 'SearchController@result']);
     Route::get('/phone', [
         "as"=> 'phone',
-        "uses"=> 'SearchController@view']);
+        "uses"=> 'SearchController@phone']);
