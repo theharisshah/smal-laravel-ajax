@@ -35,7 +35,7 @@
   <script type='text/javascript'>
 $( function() {
   
-  $('#results').hide();
+  
   $( "#SearchItem" ).autocomplete({
     source: "{{ route('search') }}"
 });
