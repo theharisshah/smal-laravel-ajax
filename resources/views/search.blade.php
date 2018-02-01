@@ -40,7 +40,8 @@ $( function() {
     source: "{{ route('search') }}"
 });
 
-  $("#SearchItem").keypress(function(e) {
+  $("#SearchItem").keydown(function(e) {
+      if(e.keyCode==13){
       $('#results').addClass('loadinggif');
       $('#SearchItem').addClass('loadinggif');
       
@@ -55,7 +56,7 @@ $( function() {
           $("#SearchItem").removeClass("loadinggif");
           $(".loading").removeClass("loadinggif");
         }
-    });
+    });}
   })
 });
   </script>
