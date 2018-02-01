@@ -14,10 +14,11 @@
   <body>
     <div class="container-fluid">
       <!-- Search Bar -->
-   
+       <form action="/phone" method="get" id="aa">
       <div class="search mx-auto" style="width: 35%; margin-top:100px;">
         <input type="text" class="form-control" name="SearchItem" id="SearchItem" placeholder="Search..." >
         </div>
+        </form>
       <!-- results displayed here -->
       <div class="results" id="results" style="margin-top:40px;">
        @yield('content')
@@ -36,28 +37,15 @@
 $( function() {
   
   
+$( function abc() {
+  //$('#results').hide();
   $( "#SearchItem" ).autocomplete({
-    source: "{{ route('search') }}"
+    source: "{{ route('search') }}",
+    select: function(event ,ui){
+      $("#aa").submit();
+    }
 });
 
-  $("#SearchItem").keydown(function(e) {
-      if(e.keyCode==13){
-      $('#results').addClass('loadinggif');
-      $('#SearchItem').addClass('loadinggif');
-      
-      $('#results').show();
-      $value=$('#SearchItem').val();
-      $.ajax({
-        type : 'get',
-        url :"{{ route('phone') }}",
-        data: {'SearchItem':$value},
-        success:function(data){
-          $('#results').html(data);
-          $("#SearchItem").removeClass("loadinggif");
-          $(".loading").removeClass("loadinggif");
-        }
-    });}
-  })
 });
   </script>
   </body>
