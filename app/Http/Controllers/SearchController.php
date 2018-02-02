@@ -8,21 +8,23 @@ use DB;
 
 class SearchController extends Controller
 {
+    // this function here sends the results to autocomplete event change according to requirements
     public function result(Request $request){
         $term = $request->term;
         $items = Search::where('PhoneName', 'LIKE', '%'.$term.'%')->get();
         if(count($items) == 0){
-            $searchResult[]="Item not Found!";
+            $searchResult[]="Item not Found!"; // if the search item is not in the database the autocomplete would display no item found
             return $searchResult;
         }else{
             foreach($items as $key => $value){
-                 $searchResult[] = $value->PhoneName;
+                 $searchResult[] = $value->PhoneName; //fetches the phone name and sends to autocomplete, change according to requirements
             }
         }
         return $searchResult;
     }
+    // this function here sends the results to phoneresults.blade.php
     public function phone(Request $request){
-        // if($request->ajax()){
+       
         $term = $request->input('SearchItem');
           
         $items = Search::where('PhoneName', 'LIKE', $term.'%')->first();
