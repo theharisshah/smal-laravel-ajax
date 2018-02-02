@@ -1,4 +1,4 @@
-@extends('search')
+@extends('search') 
 @section('content')
 <div class="results" id="results" style="margin-top:40px;">
 <div class="card-header">
